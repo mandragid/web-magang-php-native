@@ -1,0 +1,117 @@
+.logo-nav {
+  width: 250px;
+}
+
+.container-form {
+  width: 600px;
+}
+
+.jumbotron {
+  padding: 100px;
+}
+
+.register-button button {
+  width: 240px;
+}
+
+.hero {
+  width: 100%;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-img img {
+  object-fit: cover;
+
+  height: 100%;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.footer {
+  height: 170px;
+  background-color: #3d566e;
+  text-align: center;
+  color: white;
+}
+
+/* sidebar */
+
+.container-content {
+  background-color: #e9ecef;
+  height: 100vh;
+}
+
+#button-sidebar {
+  background-color: transparent;
+  padding: 10px;
+  width: 220px;
+
+  border: none;
+}
+
+#button-sidebar-active {
+  background-color: transparent;
+  font-weight: 900;
+  padding: 10px;
+  width: 220px;
+  border: none;
+}
+
+.button-sidebar-section img {
+  width: 40px;
+}
+
+.button-sidebar-section {
+  border-bottom: 1px solid black;
+  height: 55px;
+  margin-top: 10px;
+}
+
+.button-sidebar-section a {
+  text-decoration: none;
+}
+
+.button-sidebar-section a:hover {
+  text-decoration: none;
+}
+
+.container-fluid {
+  padding: 0px !important;
+}
+
+#inputGroupSelect02 {
+  width: 80px;
+}
+
+/* notif */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  background-color: #e6eaf5;
+  font-family: "Roboto", sans-serif;
+}
+.card {
+  width: 550px;
+
+  border: none;
+  border-radius: 30px;
+  background-color: #597afd;
+}
+h6 {
+  color: #000000;
+}
+.text {
+  color: #b2c9ff;
+}
+
+.media img {
+  width: 40px;
+}

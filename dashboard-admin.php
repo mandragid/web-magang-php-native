@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png" />
-    <title>Dashboard Mahasiswa Magang</title>
+    <title>Dashboard Admin</title>
   </head>
   <body>
     <div class="container-fluid">
@@ -44,16 +44,15 @@
         </div>
       </div>
       <div class="row">
-        <!-- sidebar -->
         <div class="col-2">
-          <div class="container-sidebar text-center pl-4">
+          <div class="container-sidebar pl-4 text-center">
             <div class="button-sidebar-section">
               <div class="row">
                 <div class="col-2 m-auto"></div>
                 <div class="col-10 mt-3">
                   <a
-                    id="button-sidebar"
-                    href="./dashboard-mhs.html"
+                    id="button-sidebar-active"
+                    href="./dashboard-admin.php"
                     id="button-sidebar"
                   >
                     Home</a
@@ -67,10 +66,10 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./registrasi-magang.html"
+                    href="./list-pendaftar.php"
                     id="button-sidebar"
                   >
-                    Pendaftaran</a
+                    Pendaftar</a
                   >
                 </div>
               </div>
@@ -80,8 +79,36 @@
                 <div class="col-2 m-auto"></div>
                 <div class="col-10 mt-3">
                   <a
-                    id="button-sidebar-active"
-                    href="./notifikasi-mhs.html"
+                    id="button-sidebar"
+                    href="./status-pendaftar.php"
+                    id="button-sidebar"
+                  >
+                    Status</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="button-sidebar-section">
+              <div class="row">
+                <div class="col-2 m-auto"></div>
+                <div class="col-10 mt-3">
+                  <a
+                    id="button-sidebar"
+                    href="./upload-surat.php"
+                    id="button-sidebar"
+                  >
+                    Upload Surat</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="button-sidebar-section">
+              <div class="row">
+                <div class="col-2 m-auto"></div>
+                <div class="col-10 mt-3">
+                  <a
+                    id="button-sidebar"
+                    href="notifikasi-admin.php"
                     id="button-sidebar"
                   >
                     Notifikasi</a
@@ -95,7 +122,21 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./about-mhs.html"
+                    href="laporan-admin.php"
+                    id="button-sidebar"
+                  >
+                    Laporan</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="button-sidebar-section">
+              <div class="row">
+                <div class="col-2 m-auto"></div>
+                <div class="col-10 mt-3">
+                  <a
+                    id="button-sidebar"
+                    href="about-admin.php"
                     id="button-sidebar"
                   >
                     About</a
@@ -107,11 +148,7 @@
               <div class="row">
                 <div class="col-2 m-auto"></div>
                 <div class="col-10 mt-3">
-                  <a
-                    id="button-sidebar"
-                    href="./dashboard-mhs.html"
-                    id="button-sidebar"
-                  >
+                  <a id="button-sidebar" href="#" id="button-sidebar">
                     Logout</a
                   >
                 </div>
@@ -119,39 +156,10 @@
             </div>
           </div>
         </div>
-        <!-- end of sidebar -->
         <div class="col">
           <div class="container-content p-5 text-center">
-            <h3>DINAS KOMUNIKASI DAN INFORMATIKA KOTA TEGAL</h3>
-
-            <div class="container-form-magang text-left">
-              <div class="row">
-                <div class="col">
-                  <p>Nama</p>
-                  <p>Universitas</p>
-                  <p>Jurusan</p>
-                  <p>Semester</p>
-                  <p>Email</p>
-                  <p>Alamat</p>
-                  <p>No. Hp</p>
-                  <p>Periode Mulai</p>
-                  <p>Periode Akhir</p>
-                  <p>Status</p>
-                </div>
-                <div class="col">
-                  <p>: Bima Aditya Pratama</p>
-                  <p>: Universitas Pancasakti Tegal</p>
-                  <p>: Sistem Informasi</p>
-                  <p>: 6</p>
-                  <p>: 130201181039@ups.ac.id</p>
-                  <p>: Jl. Nanas</p>
-                  <p>: 082091929033</p>
-                  <p>: 21-03-2023</p>
-                  <p>: 21-04-2023</p>
-                  <p>: Pending</p>
-                </div>
-              </div>
-            </div>
+            <h3>SELAMAT DATANG ADMIN</h3>
+            <h4>DINAS KOMUNIKASI DAN INFORMATIKA KOTA TEGAL</h4>
           </div>
         </div>
       </div>

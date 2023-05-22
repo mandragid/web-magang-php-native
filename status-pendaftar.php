@@ -52,7 +52,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./dashboard-admin.html"
+                    href="./dashboard-admin.php"
                     id="button-sidebar"
                   >
                     Home</a
@@ -66,7 +66,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./list-pendaftar.html"
+                    href="./list-pendaftar.php"
                     id="button-sidebar"
                   >
                     Pendaftar</a
@@ -79,8 +79,8 @@
                 <div class="col-2 m-auto"></div>
                 <div class="col-10 mt-3">
                   <a
-                    id="button-sidebar"
-                    href="./status-pendaftar.html"
+                    id="button-sidebar-active"
+                    href="./status-pendaftar.php"
                     id="button-sidebar"
                   >
                     Status</a
@@ -94,7 +94,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./upload-surat.html"
+                    href="./upload-surat.php"
                     id="button-sidebar"
                   >
                     Upload Surat</a
@@ -107,8 +107,8 @@
                 <div class="col-2 m-auto"></div>
                 <div class="col-10 mt-3">
                   <a
-                    id="button-sidebar-active"
-                    href="notifikasi-admin.html"
+                    id="button-sidebar"
+                    href="./notifikasi-admin.php"
                     id="button-sidebar"
                   >
                     Notifikasi</a
@@ -122,7 +122,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="laporan-admin.html"
+                    href="./laporan-admin.php"
                     id="button-sidebar"
                   >
                     Laporan</a
@@ -136,7 +136,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="about-admin.html"
+                    href="./about-admin.php"
                     id="button-sidebar"
                   >
                     About</a
@@ -158,31 +158,61 @@
         </div>
         <div class="col">
           <div class="container-content p-5 text-center">
-            <h3>NOTIFIKASI ADMIN</h3>
+            <h3>STATUS PENDAFTAR MAGANG</h3>
             <h4>DINAS KOMUNIKASI DAN INFORMATIKA KOTA TEGAL</h4>
-            <div class="container d-flex justify-content-center">
-              <div class="card mt-5 p-3">
-                <div class="media">
-                  <img src="./img/user.png" class="mr-3" />
-                  <div class="media-body">
-                    <h6 class="mt-2 mb-0">
-                      User telah mengajukan pendaftaran magang.
-                    </h6>
+            <div class="container-form-magang text-left">
+              <div class="row">
+                <div class="col">
+                  <p>Nama</p>
+                  <p>Universitas</p>
+                  <p>Jurusan</p>
+                  <p>Semester</p>
+                  <p>Email</p>
+                  <p>Alamat</p>
+                  <p>No. Hp</p>
+                  <p>Periode Mulai</p>
+                  <p>Periode Akhir</p>
+                  <p>Status</p>
+                </div>
+                <div class="col">
+                  <p>: Bima Aditya Pratama</p>
+                  <p>: Universitas Pancasakti Tegal</p>
+                  <p>: Sistem Informasi</p>
+                  <p>: 6</p>
+                  <p>: 130201181039@ups.ac.id</p>
+                  <p>: Jl. Nanas</p>
+                  <p>: 082091929033</p>
+                  <p>: 21-03-2023</p>
+                  <p>: 21-04-2023</p>
+                  <div class="input-group mb-3">
+                    <select class="custom-select" id="inputGroupSelect02">
+                      <option selected>Pilih Status</option>
+                      <option value="1">Diterima</option>
+                      <option value="1">Ditolak</option>
+                    </select>
                   </div>
                 </div>
+              </div>
+              <div class="container d-flex justify-content-center">
+                <button type="button" class="btn btn-primary">Simpan</button>
               </div>
             </div>
-            <div class="container d-flex justify-content-center">
-              <div class="card mt-5 p-3">
-                <div class="media">
-                  <img src="./img/user.png" class="mr-3" />
-                  <div class="media-body">
-                    <h6 class="mt-2 mb-0">
-                      User telah mengajukan pendaftaran magang.
-                    </h6>
-                  </div>
-                </div>
-              </div>
+            <div
+              class="container-pagination d-flex justify-content-center mt-5"
+            >
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>

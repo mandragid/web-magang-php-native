@@ -24,7 +24,7 @@
 			</button>
 			<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 				<div class="navbar-nav ms-auto">
-					<a href="/register.html">
+					<a href="/register.php">
 						<div type="button" class="btn btn-primary">Registrasi Magang</div>
 					</a>
 				</div>
@@ -50,7 +50,7 @@
 						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
 					</div>
 
-					<p>Belum punya akun? silahkan <a href="/register.html">registrasi</a></p>
+					<p>Belum punya akun? silahkan <a href="/register.php">registrasi</a></p>
 
 					<div class="register-button text-center">
 						<button type="submit" class="btn btn-primary">Login</button>

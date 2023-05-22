@@ -52,7 +52,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./dashboard-admin.html"
+                    href="./dashboard-admin.php"
                     id="button-sidebar"
                   >
                     Home</a
@@ -66,7 +66,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./list-pendaftar.html"
+                    href="./list-pendaftar.php"
                     id="button-sidebar"
                   >
                     Pendaftar</a
@@ -80,7 +80,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./status-pendaftar.html"
+                    href="./status-pendaftar.php"
                     id="button-sidebar"
                   >
                     Status</a
@@ -94,7 +94,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar-active"
-                    href="./upload-surat.html"
+                    href="./upload-surat.php"
                     id="button-sidebar"
                   >
                     Upload Surat</a
@@ -108,7 +108,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./notifikasi-admin.html"
+                    href="./notifikasi-admin.php"
                     id="button-sidebar"
                   >
                     Notifikasi</a
@@ -122,7 +122,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="laporan-admin.html"
+                    href="laporan-admin.php"
                     id="button-sidebar"
                   >
                     Laporan</a
@@ -136,7 +136,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="about-admin.html"
+                    href="about-admin.php"
                     id="button-sidebar"
                   >
                     About</a

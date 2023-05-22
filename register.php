@@ -12,7 +12,7 @@
 		/>
 		<link rel="stylesheet" href="./index.css" />
 		<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png" />
-		<title>Portal Penerima Magang</title>
+		<title>Registrasi Magang</title>
 	</head>
 	<body>
 		<!-- navigation bar -->
@@ -24,7 +24,7 @@
 			</button>
 			<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 				<div class="navbar-nav ms-auto">
-					<a href="/register.html">
+					<a href="/register.php">
 						<div type="button" class="btn btn-primary">Registrasi Magang</div>
 					</a>
 				</div>
@@ -32,37 +32,32 @@
 		</nav>
 		<!-- end of navigation bar -->
 
-		<!-- jumbotron -->
-
-		<div class="row">
-			<div class="col-12 col-lg-6 p-0">
-				<div class="jumbotron mb-0">
-					<h1 class="display-4">Selamat Datang Calon Peserta Magang!</h1>
-					<p class="lead">
-						Sesuai Undang-Undang Nomor 39 Tahun 2008 tentang Kementerian Negara, Kementerian Kominfo merupakan perangkat Pemerintah Republik Indonesia ini membidangi urusan yang ruang lingkupnya
-						disebutkan dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945, yaitu informasi dan komunikasi. Kementerian Komunikasi dan Informatika mempunyai tugas menyelenggarakan urusan
-						pemerintahan di bidang komunikasi dan informatika untuk membantu Presiden dalam menyelenggarakan pemerintahan negara. Kementerian Kominfo dipimpin oleh seorang Menteri Komunikasi dan
-						Informatika (Menkominfo) yang sejak tanggal 23 Oktober 2019 dijabat oleh Johnny Gerard Plate.
-					</p>
-					<hr class="my-4" />
-					<p>Untuk informasi lebih lanjut mengenai magang, silahkan registrasi terlebih dahulu.</p>
-					<a class="btn btn-primary btn-lg" href="/register.html" role="button">Registrasi Magang</a>
-				</div>
+		<div class="container-fluid d-flex justify-content-center mt-5 flex-wrap">
+			<div class="hero text-center">
+				<h3>REGISTRASI CALON PESERTA MAGANG</h3>
+				<h4>DINAS KOMUNIKASI DAN INFORMATIKA KOTA TEGAL</h4>
 			</div>
-			<div class="col-12 col-lg-6 p-0 mb-0">
-				<div class="hero-img mb-0">
-					<img src="./img/hero-pemkot.jpg" class="img-responsive fit-image" alt="" />
-				</div>
+
+			<div class="container-form mt-5">
+				<form name="frmRegister" method="post" action="connect.php">
+					<div class="form-group">
+						<label for="exampleInputEmail1">Email address</label>
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" id="txtEmail" name="txtEmail" />
+						<small id="emailHelp" class="form-text text-muted">Pastikan menggunakan e-mail yang valid.</small>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Password</label>
+						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" id="txtPassword" name="txtPassword" />
+					</div>
+
+					<p>Sudah punya akun? silahkan <a href="/login.php">login</a></p>
+
+					<div class="register-button text-center">
+						<button type="submit" class="btn btn-primary">Registrasi</button>
+					</div>
+				</form>
 			</div>
 		</div>
-
-		<!-- end of jumbotron -->
-
-		<!-- footer -->
-
-		<div class="footer d-flex justify-content-center align-items-center text-center"><p>Copyrights Reserved © 2023 Dinas Komunikasi dan Informatika Kota Tegal</p></div>
-
-		<!-- end of footer -->
 
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script

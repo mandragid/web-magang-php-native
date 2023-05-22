@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png" />
-    <title>Dashboard Admin</title>
+    <title>Dashboard Mahasiswa Magang</title>
   </head>
   <body>
     <div class="container-fluid">
@@ -44,15 +44,16 @@
         </div>
       </div>
       <div class="row">
+        <!-- sidebar -->
         <div class="col-2">
-          <div class="container-sidebar pl-4 text-center">
+          <div class="container-sidebar text-center pl-4">
             <div class="button-sidebar-section">
               <div class="row">
                 <div class="col-2 m-auto"></div>
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./dashboard-admin.html"
+                    href="./dashboard-mhs.php"
                     id="button-sidebar"
                   >
                     Home</a
@@ -65,50 +66,22 @@
                 <div class="col-2 m-auto"></div>
                 <div class="col-10 mt-3">
                   <a
+                    id="button-sidebar"
+                    href="./registrasi-magang.php"
+                    id="button-sidebar"
+                  >
+                    Pendaftaran</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="button-sidebar-section">
+              <div class="row">
+                <div class="col-2 m-auto"></div>
+                <div class="col-10 mt-3">
+                  <a
                     id="button-sidebar-active"
-                    href="./list-pendaftar.html"
-                    id="button-sidebar"
-                  >
-                    Pendaftar</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="button-sidebar-section">
-              <div class="row">
-                <div class="col-2 m-auto"></div>
-                <div class="col-10 mt-3">
-                  <a
-                    id="button-sidebar"
-                    href="./status-pendaftar.html"
-                    id="button-sidebar"
-                  >
-                    Status</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="button-sidebar-section">
-              <div class="row">
-                <div class="col-2 m-auto"></div>
-                <div class="col-10 mt-3">
-                  <a
-                    id="button-sidebar"
-                    href="/upload-surat.html"
-                    id="button-sidebar"
-                  >
-                    Upload Surat</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="button-sidebar-section">
-              <div class="row">
-                <div class="col-2 m-auto"></div>
-                <div class="col-10 mt-3">
-                  <a
-                    id="button-sidebar"
-                    href="/notifikasi-admin.html"
+                    href="./notifikasi-mhs.php"
                     id="button-sidebar"
                   >
                     Notifikasi</a
@@ -122,21 +95,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="/laporan-admin.html"
-                    id="button-sidebar"
-                  >
-                    Laporan</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="button-sidebar-section">
-              <div class="row">
-                <div class="col-2 m-auto"></div>
-                <div class="col-10 mt-3">
-                  <a
-                    id="button-sidebar"
-                    href="/about-admin.html"
+                    href="./about-mhs.php"
                     id="button-sidebar"
                   >
                     About</a
@@ -148,7 +107,11 @@
               <div class="row">
                 <div class="col-2 m-auto"></div>
                 <div class="col-10 mt-3">
-                  <a id="button-sidebar" href="#" id="button-sidebar">
+                  <a
+                    id="button-sidebar"
+                    href="./dashboard-mhs.php"
+                    id="button-sidebar"
+                  >
                     Logout</a
                   >
                 </div>
@@ -156,10 +119,11 @@
             </div>
           </div>
         </div>
+        <!-- end of sidebar -->
         <div class="col">
           <div class="container-content p-5 text-center">
-            <h3>LIST PENDAFTAR MAGANG</h3>
-            <h4>DINAS KOMUNIKASI DAN INFORMATIKA KOTA TEGAL</h4>
+            <h3>DINAS KOMUNIKASI DAN INFORMATIKA KOTA TEGAL</h3>
+
             <div class="container-form-magang text-left">
               <div class="row">
                 <div class="col">
@@ -187,24 +151,6 @@
                   <p>: Pending</p>
                 </div>
               </div>
-            </div>
-
-            <div
-              class="container-pagination d-flex justify-content-center mt-5"
-            >
-              <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                  <li class="page-item">
-                    <a class="page-link" href="#">Previous</a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
             </div>
           </div>
         </div>

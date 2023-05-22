@@ -51,8 +51,8 @@
                 <div class="col-2 m-auto"></div>
                 <div class="col-10 mt-3">
                   <a
-                    id="button-sidebar-active"
-                    href="./dashboard-admin.html"
+                    id="button-sidebar"
+                    href="./dashboard-admin.php"
                     id="button-sidebar"
                   >
                     Home</a
@@ -66,7 +66,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./list-pendaftar.html"
+                    href="./list-pendaftar.php"
                     id="button-sidebar"
                   >
                     Pendaftar</a
@@ -80,7 +80,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./status-pendaftar.html"
+                    href="./status-pendaftar.php"
                     id="button-sidebar"
                   >
                     Status</a
@@ -94,7 +94,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./upload-surat.html"
+                    href="./upload-surat.php"
                     id="button-sidebar"
                   >
                     Upload Surat</a
@@ -108,7 +108,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="notifikasi-admin.html"
+                    href="./notifikasi-admin.php"
                     id="button-sidebar"
                   >
                     Notifikasi</a
@@ -122,7 +122,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="laporan-admin.html"
+                    href="./laporan-admin.php"
                     id="button-sidebar"
                   >
                     Laporan</a
@@ -135,8 +135,8 @@
                 <div class="col-2 m-auto"></div>
                 <div class="col-10 mt-3">
                   <a
-                    id="button-sidebar"
-                    href="about-admin.html"
+                    id="button-sidebar-active"
+                    href="./about-admin.php"
                     id="button-sidebar"
                   >
                     About</a
@@ -158,8 +158,8 @@
         </div>
         <div class="col">
           <div class="container-content p-5 text-center">
-            <h3>SELAMAT DATANG ADMIN</h3>
-            <h4>DINAS KOMUNIKASI DAN INFORMATIKA KOTA TEGAL</h4>
+            <h3>WEBSITE PENERIMA CALON PESERTA MAGANG</h3>
+            <h4>v1.0</h4>
           </div>
         </div>
       </div>

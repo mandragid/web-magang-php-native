@@ -53,7 +53,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar-active"
-                    href="./dashboard-mhs.html"
+                    href="./dashboard-mhs.php"
                     id="button-sidebar"
                   >
                     Home</a
@@ -67,7 +67,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./registrasi-magang.html"
+                    href="./registrasi-magang.php"
                     id="button-sidebar"
                   >
                     Pendaftaran</a
@@ -81,7 +81,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./notifikasi-mhs.html"
+                    href="./notifikasi-mhs.php"
                     id="button-sidebar"
                   >
                     Notifikasi</a
@@ -95,7 +95,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./about-mhs.html"
+                    href="./about-mhs.php"
                     id="button-sidebar"
                   >
                     About</a
@@ -109,7 +109,7 @@
                 <div class="col-10 mt-3">
                   <a
                     id="button-sidebar"
-                    href="./dashboard-mhs.html"
+                    href="./dashboard-mhs.php"
                     id="button-sidebar"
                   >
                     Logout</a

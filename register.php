@@ -1,6 +1,20 @@
 <?php 
 require 'functions.php';
 
+if (isset($_POST['submit'])) {
+
+	if(registrasi($_POST) > 0) {
+		echo "
+		<script>
+		alert('Registrasi Berhasil');
+		document.location.href='login.php';
+		</script>
+		";
+	} else {
+		echo "gagal!";
+	}
+}
+
 ?>
 
 <!DOCTYPE html>

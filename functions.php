@@ -33,16 +33,48 @@ if(isset($_POST['submit'])) {
 };
 
 function registrasi ($data) {
+  global $conn;
 // ambil data dari form
-$user_email = $data['user_email'];
-$user_password = $data['user_password'];
+$user_email = htmlspecialchars($data['user_email']);
+$user_password = htmlspecialchars($data['user_password']);
 
 //  query ke database
 $query = "INSERT INTO data_user (id,email,password)
 VALUES('', '$user_email', '$user_password')";
 mysqli_query($conn, $query);
+
+return mysqli_affected_rows($conn);
+}
+
+
+function adminLogin ($data) {
+global $conn;
+
+if(isset($_POST['submit'])) {
+  $user_email = htmlspecialchars($data['user_email']);
+  $user_password = htmlspecialchars($data['user_password']);
+
+  if($user_email === 'admin' && $user_password === 'admin') {
+    header('location: dashboard-admin.php');
+  } else {
+    echo "salah";
+  }
+}
+
 }
  
+
+function query($query) {
+  global $conn;
+  $fetch = mysqli_query($conn, $query);
+  $rows = [];
+  while($row = mysqli_fetch_assoc($fetch)) {
+    $rows[] = $row;
+  }
+  
+
+  return $rows;
+}
 
 
 

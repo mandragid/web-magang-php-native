@@ -1,4 +1,8 @@
-<?php include 'functions.php'?>
+<?php include 'functions.php';
+
+ adminLogin($_POST);
+
+?>
 
 
 <!DOCTYPE html>
@@ -42,21 +46,21 @@
 			</div>
 
 			<div class="container-form mt-5">
-				<form>
+				<form action="" method="post">
 					<div class="form-group">
 						<label for="exampleInputEmail1">Email address</label>
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+						<input type="text" class="form-control" name="user_email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
 						<small id="emailHelp" class="form-text text-muted">Pastikan menggunakan e-mail yang valid.</small>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Password</label>
-						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+						<input type="password" class="form-control" name="user_password" id="exampleInputPassword1" placeholder="Password" />
 					</div>
 
 					<p>Belum punya akun? silahkan <a href="/register.php">registrasi</a></p>
 
 					<div class="register-button text-center">
-						<button type="submit" class="btn btn-primary">Login</button>
+						<button type="submit" name="submit" class="btn btn-primary">Login</button>
 					</div>
 
 					<div class="terms">

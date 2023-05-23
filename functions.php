@@ -1,4 +1,5 @@
 <?php
+ 
 // tampung nama server, username db dan password db ke sebuah variabel
 $servername = "localhost";
 $username = "root";
@@ -44,6 +45,28 @@ VALUES('', '$user_email', '$user_password')";
 mysqli_query($conn, $query);
 
 return mysqli_affected_rows($conn);
+}
+
+function daftarMagang($data) {
+  global $conn;
+
+  $nama = htmlspecialchars($data['nama']);
+  $universitas = htmlspecialchars($data['universitas']);
+  $jurusan = htmlspecialchars($data['jurusan']);
+  $semester = htmlspecialchars($data['semester']);
+  $email = htmlspecialchars($data['email']);
+  $alamat = htmlspecialchars($data['alamat']);
+  $no_hp = htmlspecialchars($data['no_hp']);
+  $periode_mulai = htmlspecialchars($data['periode_mulai']);
+  $periode_akhir = htmlspecialchars($data['periode_akhir']);
+
+  $query = "INSERT INTO data_mahasiswa (id,nama,universitas,jurusan,semester,email,alamat,no_hp,periode_mulai,periode_akhir,status) 
+  VALUES('','$nama','$universitas','$jurusan','$semester','$email','$alamat','$no_hp','$periode_mulai','$periode_akhir','')";
+  
+  mysqli_query($conn,$query);
+
+  return mysqli_affected_rows($conn);
+
 }
 
 

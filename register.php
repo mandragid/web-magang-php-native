@@ -1,3 +1,8 @@
+<?php 
+require 'functions.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -39,21 +44,21 @@
 			</div>
 
 			<div class="container-form mt-5">
-				<form name="frmRegister" method="post" action="connect.php">
+				<form  method="post" action="">
 					<div class="form-group">
 						<label for="exampleInputEmail1">Email address</label>
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" id="txtEmail" name="txtEmail" />
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" id="txtEmail" name="user_email" required/>
 						<small id="emailHelp" class="form-text text-muted">Pastikan menggunakan e-mail yang valid.</small>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputPassword1">Password</label>
-						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" id="txtPassword" name="txtPassword" />
+						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" id="txtPassword" name="user_password" required />
 					</div>
 
 					<p>Sudah punya akun? silahkan <a href="/login.php">login</a></p>
 
 					<div class="register-button text-center">
-						<button type="submit" class="btn btn-primary">Registrasi</button>
+						<button type="submit" name="submit" class="btn btn-primary">Registrasi</button>
 					</div>
 				</form>
 			</div>

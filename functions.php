@@ -47,6 +47,19 @@ mysqli_query($conn, $query);
 return mysqli_affected_rows($conn);
 }
 
+function login ($data) {
+  global $conn;
+// ambil data dari form
+$user_email = htmlspecialchars($data['user_email']);
+$user_password = htmlspecialchars($data['user_password']);
+
+//  query ke database
+$query = "SELECT * FROM data_user WHERE email = '$user_email' AND password = '$user_password'";
+mysqli_query($conn, $query);
+
+return mysqli_affected_rows($conn);
+}
+
 function daftarMagang($data) {
   global $conn;
 
@@ -64,7 +77,6 @@ function daftarMagang($data) {
   VALUES('','$nama','$universitas','$jurusan','$semester','$email','$alamat','$no_hp','$periode_mulai','$periode_akhir','')";
   
   mysqli_query($conn,$query);
-
   return mysqli_affected_rows($conn);
 
 }

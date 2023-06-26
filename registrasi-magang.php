@@ -7,15 +7,14 @@ if(isset($_POST['submit'])){
   if(daftarMagang($_POST) > 0) { 
     echo "
     <script>
-    alert('Registrasi Berhasil');
-    document.location.href='login.php';
+    alert('Registrasi Magang Sukses!');
+    document.location.href='notifikasi-mhs.php';
     </script>
   ";
   } else {
   echo "
     <script>
-    alert('Registrasi Berhasil');
-    document.location.href='login.php';
+    alert('Harap isi semua data!');
     </script>";
   } 
 } 
@@ -115,9 +114,9 @@ if(isset($_POST['submit'])){
 						<h4>DINAS KOMUNIKASI DAN INFORMATIKA KOTA TEGAL</h4>
 
 						<div class="container-form-magang text-left">
+							<form method="post" action="">
 							<div class="row">
 								<div class="col">
-									<form method="post" action="">
 										<div class="form-group">
 											<label for="exampleInputEmail1">Nama Lengkap</label>
 											<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Ketik Nama Lengkap" name="nama" required />
@@ -138,10 +137,9 @@ if(isset($_POST['submit'])){
 											<label for="exampleInputEmail1">E-mail</label>
 											<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Alamat E-mail" name="email" required />
 										</div>
-									</form>
-								</div>
-								<div class="col">
-									<form method="post" action="">
+									</div>
+									<div class="col">
+										
 										<div class="form-group">
 											<label for="exampleInputEmail1">Alamat</label>
 											<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Alamat Lengkap" name="alamat" required />
@@ -151,23 +149,21 @@ if(isset($_POST['submit'])){
 											<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nomor Handphone yang aktif" name="no_hp" required />
 										</div>
 										<div class="form-group">
-											<label for="exampleInputEmail1">Periode Mutasi dd/mm/yyyy</label>
+											<label for="exampleInputEmail1">Periode Mulai dd/mm/yyyy</label>
 											<input type="form" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Periode Mutasi" name="periode_mulai" required />
 										</div>
 										<div class="form-group">
 											<label for="exampleInputEmail1">Periode Akhir dd/mm/yyyy</label>
 											<input type="form" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Periode Akhir" name="periode_akhir"  required/>
 										</div>
-										<div class="form-group">
-											<label for="exampleInputEmail1">Surat Pengantar</label>
-											<input type="file" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
+										
+										<div class="row justify-content-center mt-5">
+											<button type="submit" name="submit" value="Submit" class="btn btn-primary">Registrasi</button>
 										</div>
-                    <div class="row justify-content-center mt-5">
-								<button type="submit" name="submit" value="Submit" class="btn btn-primary">Registrasi</button>
-							</div>
-									</form>
+										
+									</div>
 								</div>
-							</div>
+							</form>
 							
 						</div>
 					</div>

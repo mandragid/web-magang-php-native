@@ -3,14 +3,27 @@
 require 'functions.php';
 
 if(isset($_POST['submit'])){
-
+	$inserted_id = daftarMagang($_POST);
   if(daftarMagang($_POST) > 0) { 
-    echo "
+
+	session_start();
+	$_SESSION['userID'] = $inserted_id;
+	$_SESSION['nama'] = $_POST['nama'];
+	$_SESSION['universitas'] = $_POST['universitas'];
+	$_SESSION['jurusan'] = $_POST['jurusan'];
+	$_SESSION['semester'] = $_POST['semester'];
+	$_SESSION['alamat'] = $_POST['alamat'];
+	$_SESSION['no_hp'] = $_POST['no_hp'];
+	$_SESSION['periode_mulai'] = $_POST['periode_mulai'];
+	$_SESSION['periode_akhir'] = $_POST['periode_akhir'];
+	$_SESSION['email'] = $_POST['email'];
+    
+	echo "
     <script>
     alert('Registrasi Magang Sukses!');
-    document.location.href='notifikasi-mhs.php';
+    document.location.href='notifikasi-mhs.php?id=$inserted_id';
     </script>
-  ";
+  "; 
   } else {
   echo "
     <script>

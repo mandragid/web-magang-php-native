@@ -75,11 +75,19 @@ function daftarMagang($data) {
 
   $query = "INSERT INTO data_mahasiswa (id,nama,universitas,jurusan,semester,email,alamat,no_hp,periode_mulai,periode_akhir,status) 
   VALUES('','$nama','$universitas','$jurusan','$semester','$email','$alamat','$no_hp','$periode_mulai','$periode_akhir','')";
+
   
   mysqli_query($conn,$query);
-  return mysqli_affected_rows($conn);
+  
+   
+
+  return  $inserted_id = mysqli_insert_id($conn);
 
 }
+
+
+
+
 
 
 function adminLogin ($data) {

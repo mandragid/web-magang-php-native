@@ -1,3 +1,27 @@
+<?php 
+require "functions.php";
+
+session_start();
+if (isset($_SESSION['userID'])) {
+  $userID = $_SESSION['userID'];
+  $nama = $_SESSION['nama'];
+  $universitas = $_SESSION['universitas'];
+  $jurusan = $_SESSION['jurusan'];
+  $semester = $_SESSION['semester'];
+  $email = $_SESSION['email'];
+  $alamat = $_SESSION['alamat'];
+  $no_hp = $_SESSION['no_hp'];
+  $periode_mulai = $_SESSION['periode_mulai'];
+  $periode_akhir = $_SESSION['periode_akhir'];
+
+ 
+ 
+} else {
+  echo "User data not found.";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -139,15 +163,16 @@
                   <p>Status</p>
                 </div>
                 <div class="col">
-                  <p>: Bima Aditya Pratama</p>
-                  <p>: Universitas Pancasakti Tegal</p>
-                  <p>: Sistem Informasi</p>
-                  <p>: 6</p>
-                  <p>: 130201181039@ups.ac.id</p>
-                  <p>: Jl. Nanas</p>
-                  <p>: 082091929033</p>
-                  <p>: 21-03-2023</p>
-                  <p>: 21-04-2023</p>
+                  <p>: <?= $nama; ?></p>
+                  <p>: <?= $universitas; ?></p>
+                  <p>: <?= $jurusan; ?></p>
+                  <p>: <?= $semester; ?></p>
+                  <p>: <?= $email; ?></p>
+                  <p>: <?= $alamat; ?></p>
+                  <p>: <?= $no_hp; ?></p>
+                  <p>: <?= $periode_mulai; ?></p>
+                  <p>: <?= $periode_akhir; ?></p>
+            
                   <p>: Pending</p>
                 </div>
               </div>

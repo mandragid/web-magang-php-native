@@ -1,3 +1,9 @@
+<?php 
+require 'functions.php';
+$mahasiswa = query("SELECT * FROM data_mahasiswa");
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -117,7 +123,7 @@
         </div>
         <div class="col">
           <div class="container-content p-5 text-center">
-            <h3>NOTIFIKASI ADMIN</h3>
+            <h3>LAPORAN ADMIN</h3>
             <h4>DINAS KOMUNIKASI DAN INFORMATIKA KOTA TEGAL</h4>
             <div class="container d-flex justify-content-center">
               <table class="table table-striped">
@@ -133,25 +139,25 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">User</th>
-                    <td>Udinus</td>
-                    <td>Sistem Informasi</td>
-                    <td>6</td>
-                    <td>Jl. Nanas</td>
-                    <td>08123940088</td>
-                    <td>Diterima</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">User</th>
-                    <td>Undip</td>
-                    <td>Sistem Informasi</td>
-                    <td>3</td>
-                    <td>Jl. Sawo</td>
-                    <td>08123940088</td>
-                    <td>Ditolak</td>
-                  </tr>
-                </tbody>
+                 
+                  <?php $i=1;?>
+                    <?php foreach($mahasiswa as $mhs): ?>
+                    <tr>
+                      <th scope="row"><?= $i; ?></th>
+                      <td><a href="<?=$mhs['id']?>"><?=$mhs['nama']?></a></td>
+                      <td><?=$mhs['universitas']?></td>
+                      <td><?=$mhs['jurusan']?></td>
+                      <td><?=$mhs['semester']?></td>
+                      <td><?=$mhs['email']?></td>
+                      <td><?=$mhs['alamat']?></td>
+                      <td><?=$mhs['no_hp']?></td>
+                      <td><?=$mhs['status']?></td>
+                    </tr>
+                  <?php $i++; ?>
+                    <?php endforeach ?>
+                    
+                  
+								</tbody>
               </table>
             </div>
           </div>

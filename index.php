@@ -22,15 +22,15 @@ require 'functions.php'
 	<body>
 		<!-- navigation bar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
-			<a class="navbar-brand ml-5" href="/"><img class="logo-nav" src="./img/logo_diskominfo.png" alt="" /></a>
+			<a class="navbar-brand ml-5" href="./"><img class="logo-nav" src="./img/logo_diskominfo.png" alt="" /></a>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 				<div class="navbar-nav ms-auto">
-					<a href="/register.php">
-						<div type="button" class="btn btn-primary">Registrasi Magang</div>
+					<a href="./login.php">
+						<div type="button" class="btn btn-primary">Login</div>
 					</a>
 				</div>
 			</div>
@@ -51,7 +51,7 @@ require 'functions.php'
 					</p>
 					<hr class="my-4" />
 					<p>Untuk informasi lebih lanjut mengenai magang, silahkan registrasi terlebih dahulu.</p>
-					<a class="btn btn-primary btn-lg" href="/register.php" role="button">Registrasi Magang</a>
+					<a class="btn btn-primary btn-lg" href="./register.php" role="button">Registrasi Magang</a>
 				</div>
 			</div>
 			<div class="col-12 col-lg-6 p-0 mb-0">

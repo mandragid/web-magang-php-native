@@ -36,18 +36,12 @@ if (isset($_POST['submit'])) {
 	<body>
 		<!-- navigation bar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
-			<a class="navbar-brand ml-5" href="/"><img class="logo-nav" src="./img/logo_diskominfo.png" alt="" /></a>
+			<a class="navbar-brand ml-5" href="./"><img class="logo-nav" src="./img/logo_diskominfo.png" alt="" /></a>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-				<div class="navbar-nav ms-auto">
-					<a href="/register.php">
-						<div type="button" class="btn btn-primary">Registrasi Magang</div>
-					</a>
-				</div>
-			</div>
+		
 		</nav>
 		<!-- end of navigation bar -->
 
@@ -69,7 +63,7 @@ if (isset($_POST['submit'])) {
 						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" id="txtPassword" name="user_password" required />
 					</div>
 
-					<p>Sudah punya akun? silahkan <a href="/login.php">login</a></p>
+					<p>Sudah punya akun? silahkan <a href="./login.php">login</a></p>
 
 					<div class="register-button text-center">
 						<button type="submit" name="submit" class="btn btn-primary">Registrasi</button>

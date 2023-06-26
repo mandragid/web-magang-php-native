@@ -19,7 +19,7 @@
       <div class="row">
         <div class="col">
           <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
-            <a class="navbar-brand ml-5" href="/"
+            <a class="navbar-brand ml-5" href="./"
               ><img class="logo-nav" src="./img/logo_diskominfo.png" alt=""
             /></a>
 
@@ -74,48 +74,7 @@
                 </div>
               </div>
             </div>
-            <div class="button-sidebar-section">
-              <div class="row">
-                <div class="col-2 m-auto"></div>
-                <div class="col-10 mt-3">
-                  <a
-                    id="button-sidebar"
-                    href="./status-pendaftar.php"
-                    id="button-sidebar"
-                  >
-                    Status</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="button-sidebar-section">
-              <div class="row">
-                <div class="col-2 m-auto"></div>
-                <div class="col-10 mt-3">
-                  <a
-                    id="button-sidebar"
-                    href="./upload-surat.php"
-                    id="button-sidebar"
-                  >
-                    Upload Surat</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="button-sidebar-section">
-              <div class="row">
-                <div class="col-2 m-auto"></div>
-                <div class="col-10 mt-3">
-                  <a
-                    id="button-sidebar"
-                    href="./notifikasi-admin.php"
-                    id="button-sidebar"
-                  >
-                    Notifikasi</a
-                  >
-                </div>
-              </div>
-            </div>
+
             <div class="button-sidebar-section">
               <div class="row">
                 <div class="col-2 m-auto"></div>

@@ -32,6 +32,14 @@ if(isset($_POST['submit'])){
   } 
 } 
 
+  
+// ...
+
+// Jika tombol logout ditekan
+if (isset($_POST['logout'])) {
+  logout();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -111,13 +119,25 @@ if(isset($_POST['submit'])){
 							</div>
 						</div>
 						<div class="button-sidebar-section">
-							<div class="row">
-								<div class="col-2 m-auto"></div>
-								<div class="col-10 mt-3">
-									<a id="button-sidebar" href="./dashboard-mhs.php" id="button-sidebar"> Logout</a>
-								</div>
-							</div>
-						</div>
+              <div class="row">
+                <div class="col-2 m-auto"></div>
+                <div class="col-10 mt-3">
+                <form action="" method="post">
+                <button
+                    id="button-sidebar"
+                    href="./dashboard-mhs.php"
+                    id="button-sidebar"
+                    name="logout"
+                  >
+                    Logout</button
+                  >
+
+                </form>  
+                
+                </div>
+              </div>
+            </div>
+						
 					</div>
 				</div>
 				<!-- end of sidebar -->

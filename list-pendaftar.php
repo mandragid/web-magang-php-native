@@ -106,8 +106,6 @@ $mahasiswa = query("SELECT * FROM data_mahasiswa");
 										<th scope="col">Email</th>
 										<th scope="col">Alamat</th>
 										<th scope="col">No. HP</th>
-										<th scope="col">Periode Mulai</th>
-										<th scope="col">Periode Akhir</th>
 										<th scope="col">Status</th>
 									</tr>
 								</thead>
@@ -117,15 +115,13 @@ $mahasiswa = query("SELECT * FROM data_mahasiswa");
                     <?php foreach($mahasiswa as $mhs): ?>
                     <tr>
                       <th scope="row"><?= $i; ?></th>
-                      <td><a href="<?=$mhs['id']?>"><?=$mhs['nama']?></a></td>
+                      <td><a href="detail-mahasiswa.php?id=<?=$mhs['id']?>"><?=$mhs['nama']?></a></td>
                       <td><?=$mhs['universitas']?></td>
                       <td><?=$mhs['jurusan']?></td>
                       <td><?=$mhs['semester']?></td>
                       <td><?=$mhs['email']?></td>
                       <td><?=$mhs['alamat']?></td>
                       <td><?=$mhs['no_hp']?></td>
-                      <td><?=$mhs['periode_mulai']?></td>
-                      <td><?=$mhs['periode_akhir']?></td>
                       <td><?=$mhs['status']?></td>
                     </tr>
                   <?php $i++; ?>

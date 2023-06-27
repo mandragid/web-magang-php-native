@@ -5,12 +5,14 @@
  if (isset($_POST['submit'])) {
 
 	if(login($_POST) > 0) {
+		session_start();
+		$_SESSION['user_id'] = $_POST['user_email'];
 		echo "
 		<script>
 		alert('Login Berhasil!');
 		document.location.href='dashboard-mhs.php';
 		</script>
-		";
+		";	
 	} else {
 		echo "<script>
 		alert('Pastikan User dan Password anda Benar!');
@@ -18,6 +20,7 @@
 		</script>";
 	}
 }
+
 
 ?>
 

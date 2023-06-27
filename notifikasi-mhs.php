@@ -1,24 +1,32 @@
 <?php 
-require "functions.php";
+include "functions.php";
 
 session_start();
-if (isset($_SESSION['userID'])) {
-  $userID = $_SESSION['userID'];
-  $nama = $_SESSION['nama'];
-  $universitas = $_SESSION['universitas'];
-  $jurusan = $_SESSION['jurusan'];
-  $semester = $_SESSION['semester'];
-  $email = $_SESSION['email'];
-  $alamat = $_SESSION['alamat'];
-  $no_hp = $_SESSION['no_hp'];
-  $periode_mulai = $_SESSION['periode_mulai'];
-  $periode_akhir = $_SESSION['periode_akhir'];
 
- 
- 
-} else {
-  echo "User data not found.";
+// Periksa apakah user sudah login atau belum
+if (!isset($_SESSION['user_id'])) {
+  // User belum login, redirect ke halaman login
+  header("Location: login.php");
+  exit();
 }
+
+// Ambil inserted_id dari session
+$inserted_id = $_SESSION['user_id'];
+
+// Query untuk mengambil data mahasiswa berdasarkan inserted_id
+$query = "SELECT * FROM data_mahasiswa WHERE email = '$inserted_id'";
+$result = mysqli_query($conn, $query);
+$data = mysqli_fetch_assoc($result);
+
+  
+// ...
+
+// Jika tombol logout ditekan
+if (isset($_POST['logout'])) {
+  logout();
+}
+
+var_dump($data);
 
 ?>
 
@@ -131,13 +139,18 @@ if (isset($_SESSION['userID'])) {
               <div class="row">
                 <div class="col-2 m-auto"></div>
                 <div class="col-10 mt-3">
-                  <a
+                <form action="" method="post">
+                <button
                     id="button-sidebar"
                     href="./dashboard-mhs.php"
                     id="button-sidebar"
+                    name="logout"
                   >
-                    Logout</a
+                    Logout</button
                   >
+
+                </form>  
+                
                 </div>
               </div>
             </div>
@@ -163,16 +176,15 @@ if (isset($_SESSION['userID'])) {
                   <p>Status</p>
                 </div>
                 <div class="col">
-                  <p>: <?= $nama; ?></p>
-                  <p>: <?= $universitas; ?></p>
-                  <p>: <?= $jurusan; ?></p>
-                  <p>: <?= $semester; ?></p>
-                  <p>: <?= $email; ?></p>
-                  <p>: <?= $alamat; ?></p>
-                  <p>: <?= $no_hp; ?></p>
-                  <p>: <?= $periode_mulai; ?></p>
-                  <p>: <?= $periode_akhir; ?></p>
-            
+                  <p>: <?= $data['nama']; ?></p>
+                  <p>: <?= $data['universitas']; ?></p>
+                  <p>: <?= $data['jurusan']; ?></p>
+                  <p>: <?= $data['semester']; ?></p>
+                  <p>: <?= $data['email']; ?></p>
+                  <p>: <?= $data['alamat']; ?></p>
+                  <p>: <?= $data['no_hp']; ?></p>
+                  <p>: <?= $data['periode_mulai']; ?></p>
+                  <p>: <?= $data['periode_akhir']; ?></p>
                   <p>: Pending</p>
                 </div>
               </div>

@@ -44,23 +44,39 @@ $query = "INSERT INTO data_user (id,email,password)
 VALUES('', '$user_email', '$user_password')";
 mysqli_query($conn, $query);
 
-return mysqli_affected_rows($conn);
+if (mysqli_affected_rows($conn) > 0) {
+  return true;
+} else {
+  return false;
+}
 }
 
-function login ($data) {
+function login($data) {
   global $conn;
-// ambil data dari form
-$user_email = htmlspecialchars($data['user_email']);
-$user_password = htmlspecialchars($data['user_password']);
+  // Ambil data dari form
+  $user_email = htmlspecialchars($data['user_email']);
+  $user_password = htmlspecialchars($data['user_password']);
 
-//  query ke database
-$query = "SELECT * FROM data_user WHERE email = '$user_email' AND password = '$user_password'";
-mysqli_query($conn, $query);
+  // Query ke database
+  $query = "SELECT * FROM data_user WHERE email = '$user_email' AND password = '$user_password'";
+  $result = mysqli_query($conn, $query);
 
-return mysqli_affected_rows($conn);
+  // Memeriksa keberhasilan login
+  if (mysqli_num_rows($result) > 0) {
+    // Login berhasil, simpan identifier unik (misalnya ID pengguna) ke dalam session
+    $user_data = mysqli_fetch_assoc($result);
+    session_start();
+    $_SESSION['user_id'] = $user_data['id']; // Menyimpan ID pengguna ke dalam session
+    return true;
+  } else {
+    // Login gagal
+    return false;
+  }
 }
+
 
 function daftarMagang($data) {
+  session_start();
   global $conn;
 
   $nama = htmlspecialchars($data['nama']);
@@ -73,25 +89,34 @@ function daftarMagang($data) {
   $periode_mulai = htmlspecialchars($data['periode_mulai']);
   $periode_akhir = htmlspecialchars($data['periode_akhir']);
 
+  // Query untuk memasukkan data mahasiswa ke database
   $query = "INSERT INTO data_mahasiswa (id,nama,universitas,jurusan,semester,email,alamat,no_hp,periode_mulai,periode_akhir,status) 
   VALUES('','$nama','$universitas','$jurusan','$semester','$email','$alamat','$no_hp','$periode_mulai','$periode_akhir','')";
-
-  
   mysqli_query($conn,$query);
-  
-   
 
-  return  $inserted_id = mysqli_insert_id($conn);
+   // Periksa apakah data berhasil ditambahkan ke database
+   if (mysqli_affected_rows($conn) > 0) {
+    $_SESSION['inserted_id'] = mysqli_insert_id($conn); // Menyimpan inserted_id ke dalam session
+    return true;
+  } else {
+    return false;
+  }
 
 }
 
 
+// logout
 
-
+function logout() {
+  session_start();
+  session_destroy();
+  // Redirect ke halaman login atau halaman lain setelah logout
+  header("Location: login.php");
+  exit();
+}
 
 
 function adminLogin ($data) {
-global $conn;
 
 if(isset($_POST['submit'])) {
   $user_email = htmlspecialchars($data['user_email']);

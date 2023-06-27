@@ -4,7 +4,7 @@ require 'functions.php';
 
 if(isset($_POST['submit'])){
 	$inserted_id = daftarMagang($_POST);
-  if(daftarMagang($_POST) > 0) { 
+	if ($inserted_id > 0) {
 
 	session_start();
 	$_SESSION['userID'] = $inserted_id;
@@ -118,7 +118,8 @@ if (isset($_POST['logout'])) {
 								</div>
 							</div>
 						</div>
-						<div class="button-sidebar-section">
+						
+			<div class="button-sidebar-section">
               <div class="row">
                 <div class="col-2 m-auto"></div>
                 <div class="col-10 mt-3">

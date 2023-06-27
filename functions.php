@@ -10,10 +10,10 @@ $database = "website_magang";
 $conn = new mysqli($servername, $username, $password, $database);
 
 // cek apakah koneksi ke database berhasil atau gagal
-if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
-  }
-  echo "Connected to Database successfully";
+// if ($conn->connect_error) {
+// 	die("Connection failed: " . $conn->connect_error);
+//   }
+//   echo "Connected to Database successfully";
 
 
 // registrasi
@@ -91,7 +91,7 @@ function daftarMagang($data) {
 
   // Query untuk memasukkan data mahasiswa ke database
   $query = "INSERT INTO data_mahasiswa (id,nama,universitas,jurusan,semester,email,alamat,no_hp,periode_mulai,periode_akhir,status) 
-  VALUES('','$nama','$universitas','$jurusan','$semester','$email','$alamat','$no_hp','$periode_mulai','$periode_akhir','')";
+  VALUES('','$nama','$universitas','$jurusan','$semester','$email','$alamat','$no_hp','$periode_mulai','$periode_akhir',3)";
   mysqli_query($conn,$query);
 
    // Periksa apakah data berhasil ditambahkan ke database
@@ -142,6 +142,13 @@ function query($query) {
   
 
   return $rows;
+}
+
+function updateStatusMahasiswa($mahasiswaId, $status) {
+  global $conn;
+
+  $query = "UPDATE data_mahasiswa SET status = '$status' WHERE id = '$mahasiswaId'";
+  mysqli_query($conn, $query);
 }
 
 

@@ -144,14 +144,18 @@ $mahasiswa = query("SELECT * FROM data_mahasiswa");
                     <?php foreach($mahasiswa as $mhs): ?>
                     <tr>
                       <th scope="row"><?= $i; ?></th>
-                      <td><a href="<?=$mhs['id']?>"><?=$mhs['nama']?></a></td>
+                      <td><?=$mhs['nama']?></td>
                       <td><?=$mhs['universitas']?></td>
                       <td><?=$mhs['jurusan']?></td>
                       <td><?=$mhs['semester']?></td>
                       <td><?=$mhs['email']?></td>
                       <td><?=$mhs['alamat']?></td>
                       <td><?=$mhs['no_hp']?></td>
-                      <td><?=$mhs['status']?></td>
+                      <td><?php if ($mhs['status'] == 1): ?>
+        <p>Diterima</p>
+      <?php else: ?>
+        <p>Ditolak</p>
+      <?php endif; ?></td>
                     </tr>
                   <?php $i++; ?>
                     <?php endforeach ?>

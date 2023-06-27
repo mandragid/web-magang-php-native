@@ -122,7 +122,15 @@ $mahasiswa = query("SELECT * FROM data_mahasiswa");
                       <td><?=$mhs['email']?></td>
                       <td><?=$mhs['alamat']?></td>
                       <td><?=$mhs['no_hp']?></td>
-                      <td><?=$mhs['status']?></td>
+                      <td><?php if ($mhs['status'] == 1): ?>
+        <p>Diterima</p>
+      <?php elseif ($mhs['status'] == 0): ?>
+        <p>Ditolak</p>
+      <?php elseif ($mhs['status'] == 3): ?>
+        <p>Menunggu</p>
+      <?php else: ?>
+        <p>Status tidak valid</p>
+      <?php endif; ?></td>
                     </tr>
                   <?php $i++; ?>
                     <?php endforeach ?>
@@ -132,21 +140,7 @@ $mahasiswa = query("SELECT * FROM data_mahasiswa");
 							</table>
 						</div>
 
-						<div class="container-pagination d-flex justify-content-center mt-5">
-							<nav aria-label="Page navigation example">
-								<ul class="pagination">
-									<li class="page-item">
-										<a class="page-link" href="#">Previous</a>
-									</li>
-									<li class="page-item"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
-									<li class="page-item">
-										<a class="page-link" href="#">Next</a>
-									</li>
-								</ul>
-							</nav>
-						</div>
+						 
 					</div>
 				</div>
 			</div>

@@ -15,7 +15,20 @@ if (isset($_GET['id'])) {
       echo "Data not found"; // Tampilkan pesan jika data tidak ditemukan
     }
   }
+
+  if(isset($_POST['save'])) {
+    $mahasiswaId = $_GET['id'];
+    $status = $_POST['status'];
   
+    // Memperbarui nilai status mahasiswa dalam database
+    updateStatusMahasiswa($mahasiswaId, $status);
+  
+    // Redirect ke halaman detail mahasiswa
+    header("Location: list-pendaftar.php");
+    exit();
+  }
+  
+  var_dump($_POST);
 
 ?>
 
@@ -127,14 +140,17 @@ if (isset($_GET['id'])) {
         <td><?= $mahasiswa['periode_mulai'] ?></td>
         <td><?= $mahasiswa['periode_akhir'] ?></td>
         <td>
-          <select class="status-select" id="status-select">
-            <option value="1" <?= $mahasiswa['status'] == 1 ? 'selected' : '' ?>>Terima</option>
-            <option value="0" <?= $mahasiswa['status'] == 0 ? 'selected' : '' ?>>Tolak</option>
-          </select>
+        <form action="" method="POST">
+        <input type="hidden" name="mahasiswa_id" value="<?php echo $mahasiswaId; ?>">
+        <label for="status">Status:</label>
+        <select name="status" id="status">
+          <option value="0">Tolak</option>
+          <option value="1">Terima</option>
+        </select>
+        <button type="submit" class="btn-save" name="save">Save</button>
+</form>
         </td>
-        <td>
-          <button class="btn-save" onclick="saveStatus()">Simpan</button>
-        </td>
+        
       </tr>
     </table>
     <a class="btn-back" href="list-pendaftar.php">Kembali</a>

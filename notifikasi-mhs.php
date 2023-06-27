@@ -26,7 +26,7 @@ if (isset($_POST['logout'])) {
   logout();
 }
 
-var_dump($data);
+ 
 
 ?>
 
@@ -185,7 +185,15 @@ var_dump($data);
                   <p>: <?= $data['no_hp']; ?></p>
                   <p>: <?= $data['periode_mulai']; ?></p>
                   <p>: <?= $data['periode_akhir']; ?></p>
-                  <p>: Pending</p>
+                  <p>: <?php if ($data['status'] == 1): ?>
+        <p>Diterima</p>
+      <?php elseif ($data['status'] == 0): ?>
+        <p>Ditolak</p>
+      <?php elseif ($data['status'] == 3): ?>
+        <p>Menunggu</p>
+      <?php else: ?>
+        <p>Status tidak valid</p>
+      <?php endif; ?></p>
                 </div>
               </div>
             </div>

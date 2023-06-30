@@ -1,3 +1,20 @@
+<?php
+
+
+require "functions.php";
+
+session_start();
+  
+// ...
+
+// Jika tombol logout ditekan
+if (isset($_POST['logout'])) {
+  logout();
+}
+ 
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -105,16 +122,23 @@
                 </div>
               </div>
             </div>
+            <form action="" method="post">
             <div class="button-sidebar-section">
               <div class="row">
                 <div class="col-2 m-auto"></div>
                 <div class="col-10 mt-3">
-                  <a id="button-sidebar" href="#" id="button-sidebar">
-                    Logout</a
+                <button
+                    id="button-sidebar"
+                    href="./dashboard-mhs.php"
+                    id="button-sidebar"
+                    name="logout"
+                  >
+                    Logout</button
                   >
                 </div>
               </div>
             </div>
+            </form>
           </div>
         </div>
         <div class="col">

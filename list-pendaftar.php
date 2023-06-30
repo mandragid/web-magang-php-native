@@ -2,6 +2,15 @@
 require 'functions.php';
 $mahasiswa = query("SELECT * FROM data_mahasiswa");
  
+
+session_start();
+  
+// ...
+
+// Jika tombol logout ditekan
+if (isset($_POST['logout'])) {
+  logout();
+}
 ?>
 
 <!DOCTYPE html>
@@ -80,71 +89,75 @@ $mahasiswa = query("SELECT * FROM data_mahasiswa");
 								</div>
 							</div>
 						</div>
-						<div class="button-sidebar-section">
-							<div class="row">
-								<div class="col-2 m-auto"></div>
-								<div class="col-10 mt-3">
-									<a id="button-sidebar" href="#" id="button-sidebar"> Logout</a>
-								</div>
-							</div>
-						</div>
+						<form action="" method="post">
+            			<div class="button-sidebar-section">
+             				 <div class="row">
+                				<div class="col-2 m-auto"></div>
+               					 <div class="col-10 mt-3">
+               						 <button
+                  						  id="button-sidebar"
+                   							href="./dashboard-mhs.php"
+                    						id="button-sidebar"
+                    						name="logout"
+                  					>
+                   					 Logout</button
+                  					>
+               			 </div>
+              </div>
+            </div>
+            </form>
 					</div>
 				</div>
 				<div class="col">
-					<div class="container-content p-5 text-center">
-						<h3>LIST PENDAFTAR MAGANG</h3>
-						<h4>DINAS KOMUNIKASI DAN INFORMATIKA KOTA TEGAL</h4>
-						<div class="container-form-magang text-left">
-							<table class="table table-striped">
-								<thead class="thead-dark">
-									<tr>
-										<th scope="col">No.</th>
-										<th scope="col">Nama</th>
-										<th scope="col">Universitas</th>
-										<th scope="col">Jurusan</th>
-										<th scope="col">Semester</th>
-										<th scope="col">Email</th>
-										<th scope="col">Alamat</th>
-										<th scope="col">No. HP</th>
-										<th scope="col">Status</th>
-									</tr>
-								</thead>
-								<tbody>
-                 
-                  <?php $i=1;?>
-                    <?php foreach($mahasiswa as $mhs): ?>
-                    <tr>
-                      <th scope="row"><?= $i; ?></th>
-                      <td><a href="detail-mahasiswa.php?id=<?=$mhs['id']?>"><?=$mhs['nama']?></a></td>
-                      <td><?=$mhs['universitas']?></td>
-                      <td><?=$mhs['jurusan']?></td>
-                      <td><?=$mhs['semester']?></td>
-                      <td><?=$mhs['email']?></td>
-                      <td><?=$mhs['alamat']?></td>
-                      <td><?=$mhs['no_hp']?></td>
-                      <td><?php if ($mhs['status'] == 1): ?>
-        <p>Diterima</p>
-      <?php elseif ($mhs['status'] == 0): ?>
-        <p>Ditolak</p>
-      <?php elseif ($mhs['status'] == 3): ?>
-        <p>Menunggu</p>
-      <?php else: ?>
-        <p>Status tidak valid</p>
-      <?php endif; ?></td>
-                    </tr>
-                  <?php $i++; ?>
-                    <?php endforeach ?>
-                    
-                  
-								</tbody>
-							</table>
-						</div>
+  <div class="container-content p-5 text-center">
+    <h3>LIST PENDAFTAR MAGANG</h3>
+    <h4>DINAS KOMUNIKASI DAN INFORMATIKA KOTA TEGAL</h4>
+    <div class="container-form-magang text-left">
+      <!-- table -->
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Universitas</th>
+            <th scope="col">Jurusan</th>
+            <th scope="col">Semester</th>
+            <th scope="col">Email</th>
+            <th scope="col">Alamat</th>
+            <th scope="col">No. HP</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php $i=1;?>
+          <?php foreach($mahasiswa as $mhs): ?>
+          <tr>
+            <th scope="row"><?= $i; ?></th>
+            <td><a href="detail-mahasiswa.php?id=<?=$mhs['id']?>"><?=$mhs['nama']?></a></td>
+            <td><?=$mhs['universitas']?></td>
+            <td><?=$mhs['jurusan']?></td>
+            <td><?=$mhs['semester']?></td>
+            <td><?=$mhs['email']?></td>
+            <td><?=$mhs['alamat']?></td>
+            <td><?=$mhs['no_hp']?></td>
+            <td><?php if ($mhs['status'] == 1): ?>
+              <p>Diterima</p>
+              <?php elseif ($mhs['status'] == 0): ?>
+              <p>Ditolak</p>
+              <?php elseif ($mhs['status'] == 3): ?>
+              <p>Menunggu</p>
+              <?php else: ?>
+              <p>Status tidak valid</p>
+              <?php endif; ?></td>
+          </tr>
+          <?php $i++; ?>
+          <?php endforeach ?>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
-						 
-					</div>
-				</div>
-			</div>
-		</div>
 
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script

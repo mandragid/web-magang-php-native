@@ -130,6 +130,23 @@ if(isset($_POST['submit'])) {
 }
 
 }
+
+// delete function
+
+function deleteMahasiswa($mahasiswaId) {
+  global $conn;
+
+  // Query to delete the mahasiswa record based on the ID
+  $query = "DELETE FROM data_mahasiswa WHERE id = '$mahasiswaId'";
+  mysqli_query($conn, $query);
+
+  // Check if the record is successfully deleted
+  if (mysqli_affected_rows($conn) > 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
  
 
 function query($query) {

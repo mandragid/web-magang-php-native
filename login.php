@@ -1,18 +1,18 @@
 <?php include 'functions.php';
 
- adminLogin($_POST);
+adminLogin($_POST);
 
- if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
 
-	if(login($_POST) > 0) {
-		session_start();
+	if (login($_POST) > 0) {
+
 		$_SESSION['user_id'] = $_POST['user_email'];
 		echo "
 		<script>
 		alert('Login Berhasil!');
 		document.location.href='dashboard-mhs.php';
 		</script>
-		";	
+		";
 	} else {
 		echo "<script>
 		alert('Pastikan User dan Password anda Benar!');
@@ -27,106 +27,96 @@
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-			crossorigin="anonymous"
-		/>
-		<link rel="stylesheet" href="./index.css" />
-		<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png" />
-		<title>Login Peserta Magang</title>
-	</head>
-	<body>
-		<!-- navigation bar -->
-		<nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
-			<a class="navbar-brand ml-5" href="./"><img class="logo-nav" src="./img/logo_diskominfo.png" alt="" /></a>
 
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			
-		</nav>
-		<!-- end of navigation bar -->
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+	<link rel="stylesheet" href="./index.css" />
+	<link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png" />
+	<title>Login Peserta Magang</title>
+</head>
 
-		<div class="container-fluid d-flex justify-content-center mt-5 flex-wrap">
-			<div class="hero text-center">
-				<h3>LOGIN CALON PESERTA MAGANG</h3>
-				<h4>DINAS KOMUNIKASI DAN INFORMATIKA KOTA TEGAL</h4>
-			</div>
+<body>
+	<!-- navigation bar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+		<a class="navbar-brand ml-5" href="./"><img class="logo-nav" src="./img/logo_diskominfo.png" alt="" /></a>
 
-			<div class="container-form mt-5">
-				<form action="" method="post">
-					<div class="form-group">
-						<label for="exampleInputEmail1">Email address</label>
-						<input type="text" class="form-control" name="user_email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-						<small id="emailHelp" class="form-text text-muted">Pastikan menggunakan e-mail yang valid.</small>
-					</div>
-					<div class="form-group">
-						<label for="exampleInputPassword1">Password</label>
-						<input type="password" class="form-control" name="user_password" id="exampleInputPassword1" placeholder="Password" />
-					</div>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-					<p>Belum punya akun? silahkan <a href="./register.php">registrasi</a></p>
+	</nav>
+	<!-- end of navigation bar -->
 
-					<div class="register-button text-center">
-						<button type="submit" name="submit" class="btn btn-primary">Login</button>
-					</div>
+	<div class="container-fluid d-flex justify-content-center mt-5 flex-wrap">
+		<div class="hero text-center">
+			<h3>LOGIN CALON PESERTA MAGANG</h3>
+			<h4>DINAS KOMUNIKASI DAN INFORMATIKA KOTA TEGAL</h4>
+		</div>
 
-					<div class="terms">
-						<div class="register-button text-center mt-5">
-							<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Persyaratan Magang</button>
+		<div class="container-form mt-5">
+			<form action="" method="post">
+				<div class="form-group">
+					<label for="exampleInputEmail1">Email address</label>
+					<input type="text" class="form-control" name="user_email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+					<small id="emailHelp" class="form-text text-muted">Pastikan menggunakan e-mail yang valid.</small>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Password</label>
+					<input type="password" class="form-control" name="user_password" id="exampleInputPassword1" placeholder="Password" />
+				</div>
 
-							<div class="modal fade text-left" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-								<div class="modal-dialog" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="exampleModalLabel">PERSYARATAN MAGANG</h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
+				<p>Belum punya akun? silahkan <a href="./register.php">registrasi</a></p>
+
+				<div class="register-button text-center">
+					<button type="submit" name="submit" class="btn btn-primary">Login</button>
+				</div>
+
+				<div class="terms">
+					<div class="register-button text-center mt-5">
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Persyaratan Magang</button>
+
+						<div class="modal fade text-left" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">PERSYARATAN MAGANG</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<div class="term-container">
+											<ol>
+												<li>Warga Negara Indonesia</li>
+												<li>Tidak sedang terikat magang dengan instansi lain.</li>
+												<li>Mahasiswa aktif</li>
+												<li>Sedang menjalani periode magang.</li>
+												<li>Menyerahkan berkas berupa surat pengantar.</li>
+												<li>Dapat berkomunikasi dengan baik, teliti dan memiliki inisiatif.</li>
+												<li>Adaptif dengan perkembangan teknologi digital.</li>
+												<li>Dapat berkomitmen dan mampu bekerja dalam tim.</li>
+												<li>Menyerahkan laporan magang pada Dinas.</li>
+											</ol>
 										</div>
-										<div class="modal-body">
-											<div class="term-container">
-												<ol>
-													<li>Warga Negara Indonesia</li>
-													<li>Tidak sedang terikat magang dengan instansi lain.</li>
-													<li>Mahasiswa aktif</li>
-													<li>Sedang menjalani periode magang.</li>
-													<li>Menyerahkan berkas berupa surat pengantar.</li>
-													<li>Dapat berkomunikasi dengan baik, teliti dan memiliki inisiatif.</li>
-													<li>Adaptif dengan perkembangan teknologi digital.</li>
-													<li>Dapat berkomitmen dan mampu bekerja dalam tim.</li>
-													<li>Menyerahkan laporan magang pada Dinas.</li>
-												</ol>
-											</div>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-secondary m-auto" data-dismiss="modal">Close</button>
-										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary m-auto" data-dismiss="modal">Close</button>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</form>
-			</div>
+				</div>
+			</form>
 		</div>
+	</div>
 
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-			crossorigin="anonymous"
-		></script>
-	</body>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
 </html>

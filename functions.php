@@ -1,5 +1,5 @@
 <?php
- 
+
 // tampung nama server, username db dan password db ke sebuah variabel
 $servername = "localhost";
 $username = "root";
@@ -19,39 +19,40 @@ $conn = new mysqli($servername, $username, $password, $database);
 // registrasi
 
 // cek tombol sudah ditekan atau belum
-if(isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
   global $conn;
-  
-  
-  
-  
+
+
+
+
 
   // cek data berhasil ditambahkan ke db atau tidak
-  if(mysqli_affected_rows($conn) > 0) {
+  if (mysqli_affected_rows($conn) > 0) {
     echo "<script>alert(registrasi berhasil!)</script>";
   }
-
 };
 
-function registrasi ($data) {
+function registrasi($data)
+{
   global $conn;
-// ambil data dari form
-$user_email = htmlspecialchars($data['user_email']);
-$user_password = htmlspecialchars($data['user_password']);
+  // ambil data dari form
+  $user_email = htmlspecialchars($data['user_email']);
+  $user_password = htmlspecialchars($data['user_password']);
 
-//  query ke database
-$query = "INSERT INTO data_user (id,email,password)
+  //  query ke database
+  $query = "INSERT INTO data_user (id,email,password)
 VALUES('', '$user_email', '$user_password')";
-mysqli_query($conn, $query);
+  mysqli_query($conn, $query);
 
-if (mysqli_affected_rows($conn) > 0) {
-  return true;
-} else {
-  return false;
-}
+  if (mysqli_affected_rows($conn) > 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-function login($data) {
+function login($data)
+{
   global $conn;
   // Ambil data dari form
   $user_email = htmlspecialchars($data['user_email']);
@@ -75,7 +76,8 @@ function login($data) {
 }
 
 
-function daftarMagang($data) {
+function daftarMagang($data)
+{
   session_start();
   global $conn;
 
@@ -92,22 +94,22 @@ function daftarMagang($data) {
   // Query untuk memasukkan data mahasiswa ke database
   $query = "INSERT INTO data_mahasiswa (id,nama,universitas,jurusan,semester,email,alamat,no_hp,periode_mulai,periode_akhir,status) 
   VALUES('','$nama','$universitas','$jurusan','$semester','$email','$alamat','$no_hp','$periode_mulai','$periode_akhir',3)";
-  mysqli_query($conn,$query);
+  mysqli_query($conn, $query);
 
-   // Periksa apakah data berhasil ditambahkan ke database
-   if (mysqli_affected_rows($conn) > 0) {
+  // Periksa apakah data berhasil ditambahkan ke database
+  if (mysqli_affected_rows($conn) > 0) {
     $_SESSION['inserted_id'] = mysqli_insert_id($conn); // Menyimpan inserted_id ke dalam session
     return true;
   } else {
     return false;
   }
-
 }
 
 
 // logout
 
-function logout() {
+function logout()
+{
   session_start();
   session_destroy();
   // Redirect ke halaman login atau halaman lain setelah logout
@@ -116,24 +118,27 @@ function logout() {
 }
 
 
-function adminLogin ($data) {
+function adminLogin($data)
+{
 
-if(isset($_POST['submit'])) {
-  $user_email = htmlspecialchars($data['user_email']);
-  $user_password = htmlspecialchars($data['user_password']);
+  if (isset($_POST['submit'])) {
+    global $conn;
+    $user_email = htmlspecialchars($data['user_email']);
+    $user_password = htmlspecialchars($data['user_password']);
 
-  if($user_email === 'admin' && $user_password === 'admin') {
-    header('location: dashboard-admin.php');
-  } else {
-    echo "salah";
+    if ($user_email === 'admin' && $user_password === 'admin') {
+      session_start();
+
+
+      header('location: dashboard-admin.php');
+    }
   }
-}
-
 }
 
 // delete function
 
-function deleteMahasiswa($mahasiswaId) {
+function deleteMahasiswa($mahasiswaId)
+{
   global $conn;
 
   // Query to delete the mahasiswa record based on the ID
@@ -147,34 +152,25 @@ function deleteMahasiswa($mahasiswaId) {
     return false;
   }
 }
- 
 
-function query($query) {
+
+function query($query)
+{
   global $conn;
   $fetch = mysqli_query($conn, $query);
   $rows = [];
-  while($row = mysqli_fetch_assoc($fetch)) {
+  while ($row = mysqli_fetch_assoc($fetch)) {
     $rows[] = $row;
   }
-  
+
 
   return $rows;
 }
 
-function updateStatusMahasiswa($mahasiswaId, $status) {
+function updateStatusMahasiswa($mahasiswaId, $status)
+{
   global $conn;
 
   $query = "UPDATE data_mahasiswa SET status = '$status' WHERE id = '$mahasiswaId'";
   mysqli_query($conn, $query);
 }
-
-
-
-
-
-
-
-
-
-?>
-

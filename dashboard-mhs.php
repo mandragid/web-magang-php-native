@@ -5,7 +5,13 @@ require "functions.php";
 
 session_start();
   
-// ...
+
+// Periksa apakah user sudah login atau belum
+if (!isset($_SESSION['user_id'])) {
+  // User belum login, redirect ke halaman login
+  header("Location: login.php");
+  exit();
+}
 
 // Jika tombol logout ditekan
 if (isset($_POST['logout'])) {

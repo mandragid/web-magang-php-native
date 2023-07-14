@@ -183,12 +183,12 @@ if (isset($_POST['logout'])) {
 											<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nomor Handphone yang aktif" name="no_hp" required />
 										</div>
 										<div class="form-group">
-											<label for="exampleInputEmail1">Periode Mulai dd/mm/yyyy</label>
-											<input type="form" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Periode Mutasi" name="periode_mulai" required />
+											<label for="exampleInputEmail1">Periode Mulai</label>
+											<input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Periode Mutasi" name="periode_mulai" required />
 										</div>
 										<div class="form-group">
-											<label for="exampleInputEmail1">Periode Akhir dd/mm/yyyy</label>
-											<input type="form" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Periode Akhir" name="periode_akhir"  required/>
+											<label for="exampleInputEmail1">Periode Akhir</label>
+											<input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Periode Akhir" name="periode_akhir"  required/>
 										</div>
 										
 										<div class="row justify-content-center mt-5">

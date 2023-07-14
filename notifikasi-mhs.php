@@ -10,6 +10,8 @@ if (!isset($_SESSION['user_id'])) {
   exit();
 }
 
+
+
 // Ambil inserted_id dari session
 $inserted_id = $_SESSION['user_id'];
 
@@ -18,7 +20,18 @@ $query = "SELECT * FROM data_mahasiswa WHERE email = '$inserted_id'";
 $result = mysqli_query($conn, $query);
 $data = mysqli_fetch_assoc($result);
 
+ 
+
+if ($data == null) {
+  echo "
+		<script>
+		alert('silahkan registrasi terlebih dahulu!');
+		document.location.href='registrasi-magang.php';
+		</script>
+		";	
   
+  exit();
+}
 // ...
 
 // Jika tombol logout ditekan

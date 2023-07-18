@@ -9,9 +9,9 @@ $inserted_id = $_SESSION['user_id'];
 
 // Periksa apakah user sudah login atau belum
 if (!isset($_SESSION['user_id'])) {
-  // User belum login, redirect ke halaman login
-  header("Location: login.php");
-  exit();
+    // User belum login, redirect ke halaman login
+    header("Location: login.php");
+    exit();
 }
 
 // Query untuk mengambil data mahasiswa berdasarkan inserted_id
@@ -23,14 +23,14 @@ $data = mysqli_fetch_assoc($result);
 
 
 if ($data == null) {
-  echo "
+    echo "
 		<script>
 		alert('silahkan registrasi terlebih dahulu!');
 		document.location.href='registrasi-magang.php';
 		</script>
 		";
 
-  exit();
+    exit();
 }
 
 $tanggalMagang = $data['periode_mulai'];
@@ -39,7 +39,7 @@ $formattedDate = date('M d, Y', strtotime($data['periode_mulai'] . ' -3 days'));
 
 // Jika tombol logout ditekan
 if (isset($_POST['logout'])) {
-  logout();
+    logout();
 }
 
 
@@ -120,6 +120,26 @@ if (isset($_POST['logout'])) {
               <div class="col-2 m-auto"></div>
               <div class="col-10 mt-3">
                 <form action="" method="post">
+                  <style>
+                    #button-sidebar {
+	                    padding: 0;
+                      display: flex;
+	                    justify-content: center;
+	                    align-items: center;
+	                    width: 100%;
+	                    height: 100%;
+	                    border: none;
+	                    text-decoration: none;
+                    }
+
+                    #button-sidebar {
+                      font-size: 20px;  
+                    }
+                    #button-sidebar-active {
+                      font-size: 20px;  
+                    }
+                  </style>
+                  
                   <button id="button-sidebar" href="./dashboard-mhs.php" id="button-sidebar" name="logout">
                     Logout</button>
 
@@ -136,48 +156,46 @@ if (isset($_POST['logout'])) {
           <h3>DINAS KOMUNIKASI DAN INFORMATIKA KOTA TEGAL</h3>
 
           <div class="container-form-magang text-left">
-            <div class="row">
-              <div class="col">
-                <p>Nama</p>
-                <p>Universitas</p>
-                <p>Jurusan</p>
-                <p>Semester</p>
-                <p>Email</p>
-                <p>Alamat</p>
-                <p>No. Hp</p>
-                <p>Periode Mulai</p>
-                <p>Periode Akhir</p>
-                <p>Status</p>
+            <div class="row d-flex justify-content-center">
 
+            <style>
+  ul {
+    list-style: none;
+  }
+</style>
 
-              </div>
-              <div class="col">
-                <p>: <?= $data['nama']; ?></p>
-                <p>: <?= $data['universitas']; ?></p>
-                <p>: <?= $data['jurusan']; ?></p>
-                <p>: <?= $data['semester']; ?></p>
-                <p>: <?= $data['email']; ?></p>
-                <p>: <?= $data['alamat']; ?></p>
-                <p>: <?= $data['no_hp']; ?></p>
-                <p>: <?= $data['periode_mulai']; ?></p>
-                <p>: <?= $data['periode_akhir']; ?></p>
+            <div class="list-nama">
+            <ul>
+              <li><p>Nama  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;: <?= $data['nama']; ?></p></li>
+              <li><p>Universitas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?= $data['universitas']; ?></p></li>
+              <li><p>Jurusan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?= $data['jurusan']; ?></p></li>
+              <li><p>Semester &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?= $data['semester']; ?></p></li>
+              <li><p>Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?= $data['email']; ?></p></li>
+              <li><p>Alamat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?= $data['alamat']; ?></p></li>
+              <li><p>No. Hp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?= $data['no_hp']; ?></p></li>
+              <li><p>Periode Mulai     : <?= $data['periode_mulai']; ?></p></li>
+              <li><p>Periode Akhir     : <?= $data['periode_akhir']; ?></p></li>
+              <li> 
                 <?php if ($data['status'] == 1) : ?>
-                  <h5 id="status-diterima">: Diterima</h5>
+                  <h5 id="status-diterima">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Diterima</h5>
                 <?php elseif ($data['status'] == 0) : ?>
-                  <h5 id="status-ditolak">: Ditolak</h5>
+                  <h5 id="status-ditolak">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Ditolak</h5>
                 <?php elseif ($data['status'] == 3) : ?>
-                  <h5>: Menunggu</h5>
+                  <h5>Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Menunggu</h5>
                 <?php else : ?>
                   <p>Status tidak valid</p>
-                <?php endif; ?>
-
-              </div>
+                <?php endif; ?></li>
+            </ul>
+            </div>
             </div>
           </div>
-          <div class="pemberitahuan-magang">
-            <h4>Silahkan datang ke kantor Diskominfo Kota Tegal pada: <?= $formattedDate; ?></h4>
-            <p>*peserta magang wajib datang ke kantor H-3 sebelum periode magang dimulai.</p>
-          </div>
+      
+          <?php if ($data['status'] == 1): ?>
+  <div class="pemberitahuan-magang">
+    <h4>Silahkan datang ke kantor Diskominfo Kota Tegal pada: <?= $formattedDate; ?></h4>
+    <p>*peserta magang wajib datang ke kantor H-3 sebelum periode magang dimulai.</p>
+  </div>
+<?php endif; ?>
         </div>
       </div>
     </div>

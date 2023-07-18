@@ -4,20 +4,20 @@
 require "functions.php";
 
 session_start();
-  
+
 
 // Periksa apakah user sudah login atau belum
 if (!isset($_SESSION['user_id'])) {
-  // User belum login, redirect ke halaman login
-  header("Location: login.php");
-  exit();
+    // User belum login, redirect ke halaman login
+    header("Location: login.php");
+    exit();
 }
 
 // Jika tombol logout ditekan
 if (isset($_POST['logout'])) {
-  logout();
+    logout();
 }
- 
+
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +37,28 @@ if (isset($_POST['logout'])) {
     <title>Dashboard Mahasiswa Magang</title>
   </head>
   <body>
+  <style>
+                    #button-sidebar {
+                     
+	                    padding: 0;
+                      display: flex;
+	                    justify-content: center;
+	                    align-items: center;
+	                    width: 100%;
+	                    height: 100%;
+	                    border: none;
+	                    text-decoration: none;
+                    }
+
+                    #button-sidebar {
+                      font-size: 20px;  
+                    }
+                    #button-sidebar-active {
+                      font-size: 20px;  
+                    }
+
+                    
+                  </style>
     <div class="container-fluid">
       <div class="row">
         <div class="col">

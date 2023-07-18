@@ -3,33 +3,33 @@
 require 'functions.php';
 
 if (isset($_POST['submit'])) {
-	$inserted_id = daftarMagang($_POST);
-	if ($inserted_id > 0) {
+    $inserted_id = daftarMagang($_POST);
+    if ($inserted_id > 0) {
 
-		session_start();
-		$_SESSION['userID'] = $inserted_id;
-		$_SESSION['nama'] = $_POST['nama'];
-		$_SESSION['universitas'] = $_POST['universitas'];
-		$_SESSION['jurusan'] = $_POST['jurusan'];
-		$_SESSION['semester'] = $_POST['semester'];
-		$_SESSION['alamat'] = $_POST['alamat'];
-		$_SESSION['no_hp'] = $_POST['no_hp'];
-		$_SESSION['periode_mulai'] = $_POST['periode_mulai'];
-		$_SESSION['periode_akhir'] = $_POST['periode_akhir'];
-		$_SESSION['email'] = $_POST['email'];
+        session_start();
+        $_SESSION['userID'] = $inserted_id;
+        $_SESSION['nama'] = $_POST['nama'];
+        $_SESSION['universitas'] = $_POST['universitas'];
+        $_SESSION['jurusan'] = $_POST['jurusan'];
+        $_SESSION['semester'] = $_POST['semester'];
+        $_SESSION['alamat'] = $_POST['alamat'];
+        $_SESSION['no_hp'] = $_POST['no_hp'];
+        $_SESSION['periode_mulai'] = $_POST['periode_mulai'];
+        $_SESSION['periode_akhir'] = $_POST['periode_akhir'];
+        $_SESSION['email'] = $_POST['email'];
 
-		echo "
+        echo "
     <script>
     alert('Registrasi Magang Sukses!');
     document.location.href='notifikasi-mhs.php?id=$inserted_id';
     </script>
   ";
-	} else {
-		echo "
+    } else {
+        echo "
     <script>
     alert('Harap isi semua data!');
     </script>";
-	}
+    }
 }
 
 
@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
 
 // Jika tombol logout ditekan
 if (isset($_POST['logout'])) {
-	logout();
+    logout();
 }
 
 ?>
@@ -56,6 +56,26 @@ if (isset($_POST['logout'])) {
 </head>
 
 <body>
+
+<style>
+                    #button-sidebar {
+	                    padding: 0;
+                      display: flex;
+	                    justify-content: center;
+	                    align-items: center;
+	                    width: 100%;
+	                    height: 100%;
+	                    border: none;
+	                    text-decoration: none;
+                    }
+
+                    #button-sidebar {
+                      font-size: 20px;  
+                    }
+                    #button-sidebar-active {
+                      font-size: 20px;  
+                    }
+                  </style>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
